@@ -1,6 +1,11 @@
+
+
+// Core modules
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
+// 3rd Party modules
+const slugify = require('slugify')
 const replaceTemplate = require('./modules/replaceTemplate')
 ////////////////////////////////////////////////////////////////////////
 // FILES
@@ -36,7 +41,6 @@ const replaceTemplate = require('./modules/replaceTemplate')
 // Synchronous top level blocking code, will be read once
 // and then not will not matter that it is blocking
 // template files
-
 // Defining the dir path for the templates
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, 'utf-8');
 const tempProduct = fs.readFileSync(`${__dirname}/templates/template-product.html`, 'utf-8');
@@ -44,10 +48,17 @@ const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, 'u
 // Parsing and returning data
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const dataObj = JSON.parse(data);
+// Slugify tabs to templates
+const slugs = dataObj.map(el => slugify(el.productName, { lower: true}));
+console.log(slugs);
+// // Testing slugify
+// console.log(slugify('Avocados', { lower: true }))
 // end blocking code
 // Creating server
 const server = http.createServer((req, res) => {
-
+// query for the pathway for the template FILES
+// This const is set to equate the query to parse the url
+// was required in the opening declarations
   const {
     query,
     pathname
@@ -89,5 +100,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(2000, '127.0.0.1', () => {
-  console.log('Listening on port 2000');
+  console.log('Listening to requests on port 2000');
 });
+//test
