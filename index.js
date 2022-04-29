@@ -1,11 +1,10 @@
-
-
 // Core modules
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
 // 3rd Party modules
 const slugify = require('slugify')
+// Personal modules
 const replaceTemplate = require('./modules/replaceTemplate')
 ////////////////////////////////////////////////////////////////////////
 // FILES
@@ -49,16 +48,18 @@ const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, 'u
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const dataObj = JSON.parse(data);
 // Slugify tabs to templates
-const slugs = dataObj.map(el => slugify(el.productName, { lower: true}));
+const slugs = dataObj.map(el => slugify(el.productName, {
+  lower: true
+}));
 console.log(slugs);
 // // Testing slugify
 // console.log(slugify('Avocados', { lower: true }))
 // end blocking code
 // Creating server
 const server = http.createServer((req, res) => {
-// query for the pathway for the template FILES
-// This const is set to equate the query to parse the url
-// was required in the opening declarations
+  // query for the pathway for the template FILES
+  // This const is set to equate the query to parse the url
+  // was required in the opening declarations
   const {
     query,
     pathname

@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "productName": "Avocados",
+    "productName": "Fresh Avocados",
     "image": "🥑",
     "from": "Spain",
     "nutrients": "Vitamin B, Vitamin K",
@@ -12,18 +12,18 @@
   },
   {
     "id": 1,
-    "productName": "Goat Cheese",
+    "productName": "Goat and Sheep Cheese",
     "image": "🧀",
     "from": "Portugal",
     "nutrients": "Vitamin A, Calcium",
-    "quantity": "2.50lbs",
+    "quantity": "250g",
     "price": "5.00",
     "organic": false,
     "description": "Creamy and distinct in flavor, goat cheese is a dairy product enjoyed around the world. Goat cheese comes in a wide variety of flavors and textures, from soft and spreadable fresh cheese to salty, crumbly aged cheese. Although it’s made using the same coagulation and separation process as cheese made from cow’s milk, goat cheese differs in nutrient content."
   },
   {
     "id": 2,
-    "productName": "Broccoli",
+    "productName": "Apollo Broccoli",
     "image": "🥦",
     "from": "Portugal",
     "nutrients": "Vitamin C, Vitamin K",
@@ -34,7 +34,7 @@
   },
   {
     "id": 3,
-    "productName": "Carrots",
+    "productName": "Baby Carrots",
     "image": "🥕",
     "from": "France",
     "nutrients": "Vitamin A, Vitamin K",
@@ -45,7 +45,7 @@
   },
   {
     "id": 4,
-    "productName": "Sweet Corn",
+    "productName": "Sweet Corncobs",
     "image": "🌽",
     "from": "Germany",
     "nutrients": "Vitamin C, Magnesium",
